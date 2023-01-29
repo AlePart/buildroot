@@ -1,0 +1,13 @@
+comment "Oat++ needs a toolchain w/ C++"
+	depends on !BR2_INSTALL_LIBSTDCPP || !BR2_TOOLCHAIN_HAS_THREADS
+
+config BR2_PACKAGE_OATPP
+	bool "Oat++"
+	depends on BR2_INSTALL_LIBSTDCPP
+	depends on BR2_TOOLCHAIN_HAS_THREADS
+	help
+	  Oat++ is an open-source C++ web framework for highly
+	  scalable and resource-efficient web applications.
+	  It provides all the necessary components for
+	  production-grade development.
+	  See https://oatpp.io/docs/start
