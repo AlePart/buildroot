@@ -4,13 +4,13 @@
 #
 ################################################################################
 
-OATPP_VERSION= 1.3.0
-OATPP_SOURCE= $(OATPP_VERSION).tar.gz
-OATPP_SITE= https://github.com/oatpp/oatpp/archive/refs/tags
-#OATPP_SITE= git://github.com/oatpp/oatpp.git
-OATPP_INSTALL_STAGING= YES
-OATPP_INSTALL_TARGET= NO
-OATPP_MAKE=make
+OATPP_VERSION = 1.3.0
+OATPP_LICENSE = Apache-2.0
+OATPP_LICENSE_FILES = LICENSE
+OATPP_SITE = $(call github,oatpp,oatpp,$(OATPP_VERSION))
+OATPP_CMAKE_OPTS = -DBUILD_SHARED_LIBS=OFF
+OATPP_INSTALL_STAGING = YES
+# Only builds a static lib and copy headers:
+OATPP_INSTALL_TARGET = NO
 
 $(eval $(cmake-package))
-
